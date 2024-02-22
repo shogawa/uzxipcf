@@ -15,8 +15,9 @@
 
 
 ## Loading uzxipcf
+at Xspec
 ```
-XSPEC12> lmod uzxipcf path/to/uzxipcf
+lmod uzxipcf path/to/uzxipcf
 ```
 or
 
@@ -26,7 +27,7 @@ LOCAL_MODEL_DIRECTORY:path/to/uzxipcf
 ```
 and then
 ```
-XSPEC12> lmod uzxipcf
+lmod uzxipcf
 ```
 
 ## Table Model
@@ -41,13 +42,17 @@ Parameter range can be adjusted by editing uzxipcf_lmodel.dat.
 wget http://www.kusastro.kyoto-u.ac.jp/~ogawa/model/xstar/xstar_vpi.tgz
 tar zxvf xstar_vpi.tgz
 ```
-
+### Loading Table Model
 ```
 ln -sf path/to/mtable path/to/workingdir/uzxipcf_mtable.fits
 ```
-or
+or at Xspec,
 ```
-XSPEC12> xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
+xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
+```
+"/" must be at the end of the path. For example,
+```
+xset UZXIPCF_DIR /Users/shoji/work/xspec/model/xstar_vpi/
 ```
 
 ## Compile
