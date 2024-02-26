@@ -21,9 +21,13 @@ lmod uzxipcf path/to/uzxipcf
 ```
 or
 
-write the following in ~/.xspec/Xspec.init
+write the following in ~/.xspec/Xspec.init:
 ```
 LOCAL_MODEL_DIRECTORY:path/to/uzxipcf
+```
+For example,
+```
+LOCAL_MODEL_DIRECTORY: /Users/shoji/work/xspec/model/
 ```
 and then
 ```
@@ -53,6 +57,13 @@ xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
 "/" must be at the end of the path. For example,
 ```
 xset UZXIPCF_DIR /Users/shoji/work/xspec/model/xstar_vpi/
+```
+
+### For Convenience
+The followings should be written in ~/.xspec/xspec.rc:
+```
+lmod uzxipcf
+xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
 ```
 
 ## Compile
