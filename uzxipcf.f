@@ -60,7 +60,7 @@ c     light speed
 C shift energies to the emitter frame
 
       zfac = 1.0 + param(7)
-      vfac = (1+param(6)/c)/(1-(param(6)/c)**2)
+      vfac = (1+param(6)/c)/(1-(param(6)/c)**2)**0.5
       DO ie = 0, ne
          ear(ie) = ear(ie) * zfac * vfac
       ENDDO
