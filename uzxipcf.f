@@ -10,15 +10,16 @@ C absorption". Assumes that part of the emitter is covered by
 C the given absorption and the rest of the emitter is unobscured.
 C---
 C number of model parameters: 2
-C	1	ANH	Hydrogen column density (in units of 10**22
-C			atoms per square centimeter
-c       2       xi
-c       3       PhotonIndex
-c       4       vturb
-C	5	FRACT	Covering fraction (0 implies no absorption,
-C			1 implies the emitter is all absorbed with
-C			the indicated column ANH.
-C       6       REDSHIFT
+C     1     ANH   Hydrogen column density (in units of 10**22
+C                 atoms per square centimeter
+c     2     xi
+c     3     PhotonIndex
+c     4     vturb
+C     5     FRACT	Covering fraction (0 implies no absorption,
+C                 1 implies the emitter is all absorbed with
+C                 the indicated column ANH.
+C     6     Velocity
+C     7     REDSHIFT
 C---
 C Arguments :
 C    ear      r         i: energy ranges
@@ -28,7 +29,7 @@ c    ifl      i         i: the dataset
 c    photar   r         r: the transmission fraction
 C---
 
-      REAL fract, fractc, zfac
+      REAL fract, fractc, zfac, vfac, c
       INTEGER ie
       CHARACTER pname*128, pvalue*128, contxt*255
       CHARACTER*255 filenm
@@ -53,11 +54,15 @@ c     vturb
 c     z=0
       eparam(5)=0.0
 
+c     light speed
+      c=2.99792458 * 1.e5
+
 C shift energies to the emitter frame
 
-      zfac = 1.0 + param(6)
+      zfac = 1.0 + param(7)
+      vfac = (1+param(6)/c)/(1-(param(6)/c)**2)
       DO ie = 0, ne
-         ear(ie) = ear(ie) * zfac
+         ear(ie) = ear(ie) * zfac * vfac
       ENDDO
 
 c construct the path to the mtable file required
@@ -101,9 +106,10 @@ C now modify for the partial covering
 
 C shift energies back to the observed frame
 
-      zfac = 1.0 + param(6)
+      zfac = 1.0 + param(7)
+      vfac = (1+param(6)/c)/(1-(param(6)/c)**2)**0.5
       DO ie = 0, ne
-         ear(ie) = ear(ie) / zfac
+         ear(ie) = ear(ie) / zfac /vfac
       ENDDO
 
       RETURN
