@@ -9,7 +9,7 @@ C XSPEC model subroutine for redshifted "partial covering
 C absorption". Assumes that part of the emitter is covered by
 C the given absorption and the rest of the emitter is unobscured.
 C---
-C number of model parameters: 2
+C number of model parameters: 7
 C     1     ANH   Hydrogen column density (in units of 10**22
 C                 atoms per square centimeter
 c     2     xi
