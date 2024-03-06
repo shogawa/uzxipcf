@@ -2,7 +2,7 @@
       SUBROUTINE uzxipcf(ear, ne, param, ifl, photar, photer)
 
       INTEGER ne, ifl
-      REAL ear(0:ne),param(6),photar(ne),photer(ne),eparam(5)
+      REAL ear(0:ne),param(7),photar(ne),photer(ne),eparam(5)
 
 C---
 C XSPEC model subroutine for redshifted "partial covering
@@ -52,7 +52,7 @@ c     vturb
       eparam(4) = param(4)
 
 c     z=0
-      eparam(5)= param(5)
+      eparam(5) = param(7)
 
 c     light speed
       c=2.99792458 * 1.e5
