@@ -52,7 +52,7 @@ c     vturb
       eparam(4) = param(4)
 
 c     z=0
-      eparam(5)=0.0
+      eparam(5)= param(5)
 
 c     light speed
       c=2.99792458 * 1.e5
