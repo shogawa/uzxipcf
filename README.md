@@ -16,7 +16,7 @@
 
 ## Compile
 ```
-chmd 755 compile_uzxipcf.sh
+chmd u+x compile_uzxipcf.sh
 ./compile_uzxipcf.sh
 ```
 
