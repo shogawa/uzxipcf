@@ -14,6 +14,11 @@
 | v        | Radial velosity $v_\mathrm{out}$ | | km s$^{-1}$ |
 | redshift | Redshift $z$ | |  |
 
+## Compile
+```
+chmd 755 compile_uzxipcf.sh
+./compile_uzxipcf.sh
+```
 
 ## Loading uzxipcf
 at Xspec
@@ -63,12 +68,7 @@ xset UZXIPCF_DIR /Users/shoji/work/xspec/model/xstar_vpi/
 ### For Convenience
 The followings should be written in ~/.xspec/xspec.rc:
 ```
-lmod uzxipcf
 xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
+lmod uzxipcf
 ```
 
-## Compile
-```
-chmd 755 compile_uzxipcf.sh
-./compile_uzxipcf.sh
-```
