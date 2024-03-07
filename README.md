@@ -11,7 +11,7 @@
 | PhoIndex | Photon index | 1.5--2.5 | | 5 | 0.25 (linear) |
 | vturb     | Turbulent velocity $v_\mathrm{turb}$ | 100--10000 | km s$^{-1}$ | 5 | 0.5 (log) |
 | CvrFract | Covering fraction | 0--1 |  |
-| v        | Radial velosity $v_\mathrm{out}$ | km s$^{-1}$ |  |
+| v        | Radial velosity $v_\mathrm{out}$ | | km s$^{-1}$ |
 | redshift | Redshift $z$ | |  |
 
 
