@@ -20,14 +20,6 @@ C                 1 implies the emitter is all absorbed with
 C                 the indicated column ANH.
 C     6     Velocity
 C     7     REDSHIFT
-C---
-C Arguments :
-C    ear      r         i: energy ranges
-c    ne       i         i: number of energy ranges
-c    param    r         i: model parameter values
-c    ifl      i         i: the dataset
-c    photar   r         r: the transmission fraction
-C---
 
       REAL fract, fractc, zfac, vfac, c
       INTEGER ie
