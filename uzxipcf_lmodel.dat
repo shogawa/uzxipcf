@@ -1,4 +1,4 @@
-uzxipcf     7       0.01    1.e20       C_uzxipcf   mul         0
+Uzxipcf     7       0.01    1.e20       C_Uzxipcf   mul         0
 NH          10^22   1       0.01        0.01        100         100         0.01
 log_xi      " "     3       -1          -1          7           7           0.01
 PhoIndex    " "     2       1.5         1.5         2.5         2.5         -0.01

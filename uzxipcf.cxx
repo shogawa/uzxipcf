@@ -19,7 +19,7 @@
 #include <XSUtil/Numerics/Numerics.h>
 #include <XSFunctions/Utilities/FunctionUtility.h>
 extern "C" {
-void uzxipcf(const RealArray& energyArray, const RealArray& params,
+void Uzxipcf(const RealArray& energyArray, const RealArray& params,
     int spectrumNumber, RealArray& trans, RealArray& transErr,
     const string& initString)
 {
