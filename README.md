@@ -64,6 +64,10 @@ xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
 ```
 xset UZXIPCF_DIR /Users/shoji/work/xspec/model/xstar_vpi/
 ```
+or set environment variable UZXIPCF_DATA_PATH
+```
+export UZXIPCF_DATA_PATH=$HOME/work/xspec/model/xstar_vpi/
+```
 
 ### For Convenience
 The followings should be written in ~/.xspec/xspec.rc:
@@ -71,4 +75,9 @@ The followings should be written in ~/.xspec/xspec.rc:
 xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
 lmod uzxipcf
 ```
+or in ~/.zshrc
+```
+export UZXIPCF_DATA_PATH=$HOME/work/xspec/model/xstar_vpi/
+```
+
 
