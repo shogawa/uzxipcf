@@ -50,7 +50,7 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
           string DirName = string(env_p);
         }
     }
-    
+
     string fileName = DirName + "uzxipcf_mtable.fits";
 
     // interpolate on the mtable
@@ -58,7 +58,7 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
     FunctionUtility::tableInterpolate(energyArray, eparams, fileName,
         trans, transErr, initString, "mul", true);
     if ( trans.size() == 0 ) {
-        FunctionUtility::xsWrite("Failed to read "+fileName+" use xset UZXIPCF_DIR to set directory containing file", 5);
+        FunctionUtility::xsWrite("Failed to read "+fileName+" use xset UZXIPCF_DIR or set environment variable UZXIPCF_DIR to directory containing file", 5);
         return;
       }
 
