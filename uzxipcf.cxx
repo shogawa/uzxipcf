@@ -41,16 +41,17 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
 
     string pname = "UZXIPCF_DIR";
     string DirName(FunctionUtility::getModelString(pname));
-    if ( DirName.length() == 0 || DirName == FunctionUtility::NOT_A_KEY() )
+    if ( DirName.length() == 0 || DirName == FunctionUtility::NOT_A_KEY() ) {
         DirName = FunctionUtility::modelDataPath();
-    //const char* env_p = getenv("UZXIPCF_DATA_PATH");
-    //if (env_p==nullptr) {
-    //  cout<< "The environment variable UZXIPCF_DATA_PATH was not found" <<endl;
-    //  cout<< "Please set the directory, which has uzxipcf_mtable.fits" <<endl;
-    //  string DirName = "./";
-    //} else {
-    //  string DirName = string(env_p);
-    //}
+        const char* env_p = getenv("UZXIPCF_DATA_PATH");
+        if (env_p==nullptr) {
+          cout<< "The environment variable UZXIPCF_DATA_PATH was not found" <<endl;
+          cout<< "Please set the directory, which has uzxipcf_mtable.fits" <<endl;
+          string DirName = "./";
+        } else {
+          string DirName = string(env_p);
+        }
+    }
 
     string fileName = DirName + "uzxipcf_mtable.fits";
 
