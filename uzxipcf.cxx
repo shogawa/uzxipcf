@@ -45,14 +45,12 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
         DirName = FunctionUtility::modelDataPath();
         const char* env_p = getenv("UZXIPCF_DATA_PATH");
         if (env_p==nullptr) {
-          cout<< "The environment variable UZXIPCF_DATA_PATH was not found" <<endl;
-          cout<< "Please set the directory, which has uzxipcf_mtable.fits" <<endl;
           string DirName = "./";
         } else {
           string DirName = string(env_p);
         }
     }
-
+    
     string fileName = DirName + "uzxipcf_mtable.fits";
 
     // interpolate on the mtable
