@@ -51,6 +51,8 @@ Parameter range can be adjusted by editing uzxipcf_lmodel.dat.
 ```
 wget http://www.kusastro.kyoto-u.ac.jp/~ogawa/model/xstar/xstar_vpi.tgz
 tar zxvf xstar_vpi.tgz
+cd xstar_vpi
+ln -sf xstar_vpi_mtable.fits uzxipcf_mtable.fits
 ```
 ### Loading Table Model
 ```
@@ -79,5 +81,3 @@ or in ~/.zshrc
 ```
 export UZXIPCF_DATA_PATH=$HOME/work/xspec/model/xstar_vpi/
 ```
-
-
