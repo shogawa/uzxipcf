@@ -47,13 +47,22 @@ Table model must have Nh, logxi, photon index, and vturb in this order.
 Parameter range can be adjusted by editing uzxipcf_lmodel.dat.
 
 ### Download
-
+#### XSTAR
 ```
 wget http://www.kusastro.kyoto-u.ac.jp/~ogawa/model/xstar/xstar_vpi.tgz
 tar zxvf xstar_vpi.tgz
 cd xstar_vpi
 ln -sf xstar_vpi_mtable.fits uzxipcf_mtable.fits
 ```
+
+#### PION
+```
+wget http://www.kusastro.kyoto-u.ac.jp/~ogawa/model/pion/pion_high.tgz
+tar zxvf pion_high.tgz
+cd pion_high
+ln -sf pionm_high.fits uzxipcf_mtable.fits
+```
+
 ### Loading Table Model
 ```
 ln -sf path/to/mtable path/to/workingdir/uzxipcf_mtable.fits
