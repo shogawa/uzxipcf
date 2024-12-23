@@ -42,12 +42,12 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
     string pname = "UZXIPCF_DIR";
     string DirName(FunctionUtility::getModelString(pname));
     if ( DirName.length() == 0 || DirName == FunctionUtility::NOT_A_KEY() ) {
-        DirName = FunctionUtility::modelDataPath();
+        //DirName = FunctionUtility::modelDataPath();
         const char* env_p = getenv("UZXIPCF_DATA_PATH");
         if (env_p==nullptr) {
-          string DirName = "./";
+          DirName = "./";
         } else {
-          string DirName = string(env_p);
+          DirName = string(env_p);
         }
     }
 
@@ -58,7 +58,7 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
     FunctionUtility::tableInterpolate(energyArray, eparams, fileName,
         trans, transErr, initString, "mul", true);
     if ( trans.size() == 0 ) {
-        FunctionUtility::xsWrite("Failed to read "+fileName+" use xset UZXIPCF_DIR or set environment variable UZXIPCF_DIR to directory containing file", 5);
+        FunctionUtility::xsWrite("Failed to read "+fileName+" use xset UZXIPCF_DIR or set environment variable UZXIPCF_DATA_PATH to directory containing file", 5);
         return;
       }
 
