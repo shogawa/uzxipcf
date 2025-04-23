@@ -8,6 +8,7 @@
 | -------- | -------- | -------- | -------- | -------- | -------- |
 | nH     | Hydrogen column density $N_\mathrm{H}$ | 0.01--100 | 10$^{22}$ cm$^{-2}$ | 17 | 0.25 (log) |
 | log_xi | Logarithmic ionization parameter $\log\xi$ | -1--7 | (erg cm s$^{-1}$) | 33 | 0.25 (log) |
+| PhoIndex | Photon index | 1.5--2.5 | | 5 | 0.25 (linear) |
 | vturb     | Turbulent velocity $v_\mathrm{turb}$ | 100--10000 | km s$^{-1}$ | 5 | 0.5 (log) |
 | CvrFract | Covering fraction | 0--1 |  |
 | vout        | Radial velosity $v_\mathrm{out}$ | | km s$^{-1}$ |
@@ -85,7 +86,7 @@ The followings should be written in ~/.xspec/xspec.rc:
 xset UZXIPCF_DIR path/to/uzxipcf_mtable.fits
 lmod uzxipcf
 ```
-or in ~/.zshrc (recommendation)
+or in ~/.zshrc
 ```
 export UZXIPCF_DATA_PATH=$HOME/work/xspec/model/xstar_vpi/
 ```

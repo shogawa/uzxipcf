@@ -6,12 +6,13 @@
 //      0      NH       Hydrogen column density (in units of 10**22
 //                      atoms per square centimeter
 //      1      log_xi   Logarithmic ionization parameter
-//      2      vturb    Turbulent velocity
-//      3      CvrFract Covering fraction (0 implies no absorption,
+//      2      PhoIndex Photon index of ionization spectrum
+//      3      vturb    Turbulent velocity
+//      4      CvrFract Covering fraction (0 implies no absorption,
 //                      1 implies the emitter is all absorbed with
 //                      the indicated column NH
-//      4      vout     Radial velosity
-//      5      Redshift
+//      5      vout     Radial velosity
+//      6      Redshift
 
 #include <xsTypes.h>
 #include <functionMap.h>
@@ -24,16 +25,17 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
 {
     using namespace Numerics;
 
-    RealArray eparams(4);
+    RealArray eparams(5);
     eparams[0] = params[0];//*1.e22;   //  Hydrogen column density nh in units of 1e22 for param(0)
     eparams[1] = params[1];         //  Logarithmic ionization parameter logxi
-    eparams[2] = params[2];         //  Turbulent velocity
-    double cfrac = params[3];      //  Covering fraction
-    double vout = params[4];        //  vout
-    double z = params[5];           //  redshift of target
+    eparams[2] = params[2];         //  Photon Index
+    eparams[3] = params[3];         //  Turbulent velocity
+
+    double vout = params[5];        //  vout
+    double z = params[6];           //  redshift of target
     double z0 = sqrt(1 - vout*vout/(LIGHTSPEED*LIGHTSPEED)) / (1 - vout/LIGHTSPEED) - 1; // redshift of vout
 
-    eparams[3] = z + z0;            //  z
+    eparams[4] = z + z0;            //  z
 
     // find the path to the mtable file required
 
@@ -62,8 +64,8 @@ void Uzxipcf(const RealArray& energyArray, const RealArray& params,
 
       // now modify for the partial covering
 
-    trans = (1.0-cfrac) + cfrac*trans;
-    if (transErr.size() > 0 ) transErr = (1.0-cfrac) + cfrac*transErr;
+    trans = (1.0-params[4]) + params[4]*trans;
+    if (transErr.size() > 0 ) transErr = (1.0-params[4]) + params[4]*transErr;
 
     return;
 }
